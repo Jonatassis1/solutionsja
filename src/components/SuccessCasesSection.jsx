@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button.jsx';
 import {
   TrendingUp,
   Clock,
@@ -226,14 +225,11 @@ export default function SuccessCasesSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center"
           >
-            <Button
-              size="lg"
-              className="bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
+            <button className="inline-flex items-center bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
               <Download className="mr-2 w-5 h-5" />
               BAIXE NOSSO CASE COMPLETO
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </button>
             <p className="text-sm text-gray-600 mt-3">
               Receba estudos de caso detalhados e descubra como podemos ajudar sua empresa
             </p>

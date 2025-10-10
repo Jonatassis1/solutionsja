@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button.jsx';
 import { GraduationCap, BookOpen, Award, ArrowRight } from 'lucide-react';
 
 /**
@@ -138,13 +137,10 @@ export default function TrainingSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <Button
-            size="lg"
-            className="bg-[#003366] hover:bg-[#004080] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
-          >
+          <button className="inline-flex items-center bg-[#003366] hover:bg-[#004080] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
             ACESSE NOSSO CATÁLOGO DE CURSOS PROTHEUS
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          </button>
         </motion.div>
 
         {/* Destaque de resultados */}

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button.jsx';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState } from 'react';
 
@@ -175,14 +174,13 @@ export default function ContactSection() {
               </div>
 
               {/* Botão de envio */}
-              <Button
+              <button
                 type="submit"
-                size="lg"
-                className="w-full bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                className="w-full inline-flex items-center justify-center bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
               >
                 QUERO MINHAS SOLUÇÕES AGORA
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </button>
             </form>
           </motion.div>
 

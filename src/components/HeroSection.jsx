@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button.jsx';
 import { ArrowRight, Zap } from 'lucide-react';
 
 /**
@@ -81,13 +80,10 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              size="lg"
-              className="bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
-            >
+            <button className="inline-flex items-center bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group">
               FALE COM UM ESPECIALISTA PROTHEUS AGORA
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </button>
           </motion.div>
 
           {/* Elemento visual interativo - Dashboard simulado */}
