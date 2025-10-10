@@ -1,0 +1,113 @@
+Development Prompt for Landing Page - SolutionsJá (Protheus Focus)
+Project Overview
+Develop a high-conversion Landing Page for SolutionsJá, a consultancy specialized in Leadership Development, Productive Process Optimization, and Technology Automation, with maximum emphasis on ERP Protheus, Infrastructure, and Business Intelligence (BI). The goal is to convert visitors who require immediate support and evolution in their Protheus environment.
+
+Brand Identity
+Name: SolutionsJá
+
+Tagline: Protheus. Leadership. Results. Now.
+
+Value Proposition: The consultancy that delivers immediate strategic and technological solutions to optimize your Protheus ERP, align your processes, and develop your leadership for maximum efficiency.
+
+Color Palette (Focus on Professionalism and Immediate Action)
+Primary (Professionalism): Dark Blue/Navy (#003366)
+
+Secondary (Immediate Action/Highlight): Vibrant Orange/Yellow (#FF8C00 or #FFAA00) – Used for CTAs and technology highlights.
+
+Complementary: Black, Graphite Gray (#333333), White.
+
+Visual Elements
+Clean sans-serif typography, with bold fonts for titles.
+
+Icons representing Protheus modules (e.g., finance, inventory) or data connections.
+
+Background suggesting a BI dashboard or a clean code environment (tech focus).
+
+Design lines simulating data flows or optimized pathways.
+
+Landing Page Structure (Maximizing Protheus and Social Proof)
+1. Hero Section (Maximum Highlight)
+Headline: YOUR PROTHEUS ERP AT MAXIMUM POTENTIAL. SOLUTIONS JÁ.
+
+Subheadline: "Elite consultancy for Protheus ERP support, evolution, and optimization, complemented by robust Infrastructure, Business Intelligence, and leadership development."
+
+Primary CTA: SPEAK WITH A PROTHEUS SPECIALIST NOW!
+
+Interactive Element: A subtle animation simulating Protheus data being quickly processed on a BI panel, highlighted by the Secondary color.
+
+2. In-Depth Solutions (Presenting the 3 Pillars)
+Three cards or sections, with Technology being the largest and most prominent:
+
+SOLUTIONSJÁ TECHNOLOGY (MAXIMUM HIGHLIGHT):
+
+Focus: High-level support, customization, and evolution of the Protheus ERP. Implementation of Infrastructure and BI for data-driven decisions.
+
+OPTIMIZED PRODUCTIVE PROCESSES:
+
+Mapping and automation of workflows that integrate seamlessly with Protheus modules.
+
+STRATEGIC LEADERSHIP:
+
+Developing leadership to manage technology teams and utilize Protheus and BI data effectively.
+
+Interactive Element: A prominent Protheus icon on the first card that glows with the Secondary color on hover.
+
+3. Consulting and Support (Protheus Technical Deep Dive)
+Headline: Fiscal, Financial, and Operational Solutions in Protheus.
+
+Description: We guarantee the operation and evolution of your Protheus ERP, handling support, updates, and complex customizations for:
+
+Operational Cost Reduction.
+
+Fiscal Compliance (eSocial, Reinf, NTs).
+
+Module Optimization (Financial, Inventory, Billing).
+
+Visual: A list of icons representing the main Protheus modules.
+
+4. SolutionsJá Training (Protheus and Leadership)
+Headline: Training That Guarantees Mastery.
+
+Content: Practical online courses, focused on real Protheus workflows, ensuring your team uses the system with maximum efficiency, alongside leadership development modules.
+
+Secondary CTA: ACCESS OUR PROTHEUS COURSE CATALOG
+
+5. Blog and News (The Update Source)
+Headline: The Update Alert: News from the TOTVS Protheus ERP World.
+
+Display the 3 latest articles on legislation changes, Technical Notes (NTs), and Protheus updates.
+
+6. Success Cases and Metrics (Social Proof)
+Main Headline: PROVEN SOLUTIONS. QUANTIFIABLE RESULTS.
+
+A. Featured Metrics Panel:
+Display 4 large numbers/indicators representing the average or best results achieved in projects (highlighted in the Secondary color):
+
+Metric 1: % Time Reduction in Fiscal/Accounting Closing
+
+Metric 2: % Increase in Protheus/Infrastructure Performance
+
+Metric 3: No. of Leaders/Employees Trained and Certified
+
+Metric 4: % Savings in Operational and Support Costs
+
+B. Detailed Case Gallery:
+Case Card 1 (Protheus/Fiscal Focus): Solution for fiscal compliance and accelerated closing. Result (Data): -35% time spent on closing.
+
+Case Card 2 (BI/Leadership Focus): Implementation of BI Dashboards and Leadership Mentoring. Result (Data): 20% increase in decision speed.
+
+Case Card 3 (Infrastructure/Performance Focus): Protheus Acceleration and Robust Infrastructure. Result (Data): 70% reduction in critical routine processing time.
+
+CTA Within Section: DOWNLOAD OUR COMPLETE CASE STUDY (for lead capture).
+
+7. Testimonials (Personal Social Proof)
+Headline: Who Already Trusts SolutionsJá.
+
+Three quotes from satisfied leaders/managers, highlighting the speed, Protheus expertise, and quality of support.
+
+8. Contact / Final CTA
+Headline: Don't Wait for Your Results.
+
+Simple Form: For "Quick Protheus and Infrastructure Diagnosis".
+
+Final CTA: I WANT MY SOLUTIONS NOW!
