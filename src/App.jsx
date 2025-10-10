@@ -8,6 +8,7 @@ import SuccessCasesSection from './components/SuccessCasesSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import React from 'react';
 
 /**
  * Componente principal da aplicação

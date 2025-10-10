@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Server, GitBranch, Users } from 'lucide-react';
 
