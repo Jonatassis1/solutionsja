@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
 /**
  * Componente Contact Section
@@ -25,12 +25,19 @@ export default function ContactSection() {
     });
   };
 
+  // Handler para envio via WhatsApp
+  const handleWhatsAppContact = () => {
+    const phone = '5511999999999';
+    const message = encodeURIComponent(
+      `Olá! Gostaria de saber mais sobre as soluções da SolutionsJá.\n\nNome: ${formData.name}\nEmpresa: ${formData.company}\nMensagem: ${formData.message}`
+    );
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  };
+
   // Handler para envio do formulário
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Em produção, aqui seria feita a integração com API/backend
-    console.log('Form submitted:', formData);
-    alert('Obrigado! Entraremos em contato em breve.');
+    handleWhatsAppContact();
   };
 
   // Informações de contato
@@ -176,11 +183,15 @@ export default function ContactSection() {
               {/* Botão de envio */}
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center bg-[#FF8C00] hover:bg-[#FF7700] text-white font-bold text-lg py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                className="w-full inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-lg py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
               >
-                QUERO MINHAS SOLUÇÕES AGORA
+                <MessageCircle className="mr-2 w-5 h-5" />
+                FALE CONOSCO NO WHATSAPP
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+              <p className="text-center text-sm text-gray-300 mt-2">
+                Resposta garantida em até 24 horas
+              </p>
             </form>
           </motion.div>
 
