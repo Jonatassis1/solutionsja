@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, TrendingUp, BarChart3, Lightbulb, Award, ArrowRight } from 'lucide-react';
 
