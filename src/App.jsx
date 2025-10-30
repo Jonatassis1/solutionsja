@@ -6,8 +6,6 @@ import ConsultingSection from './components/ConsultingSection';
 import LeadershipSection from './components/LeadershipSection';
 import TrainingSection from './components/TrainingSection';
 import BlogSection from './components/BlogSection';
-import SuccessCasesSection from './components/SuccessCasesSection';
-import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import React from 'react';
@@ -20,14 +18,12 @@ import React from 'react';
  * 0. Header - Navegação fixa
  * 1. Hero Section - Seção principal com CTA
  * 2. Solutions Section - 3 pilares (Tecnologia, Processos, Liderança)
- * 3. Consulting Section - Detalhes técnicos do Protheus
- * 4. Leadership Section - Desenvolvimento de liderança
- * 5. Success Cases Section - Métricas e casos de sucesso
- * 6. Training Section - Treinamentos e certificações
- * 7. Blog Section - Últimas notícias do Protheus
- * 8. Testimonials Section - Depoimentos de clientes
- * 9. Contact Section - Formulário de contato e CTA final
- * 10. Footer - Links e informações da empresa
+ * 3. Leadership Section - Desenvolvimento de liderança
+ * 4. Consulting Section - Detalhes técnicos do Protheus
+ * 5. Training Section - Treinamentos e certificações
+ * 6. Blog Section - Últimas notícias do Protheus
+ * 7. Contact Section - Formulário de contato e CTA final
+ * 8. Footer - Links e informações da empresa
  */
 function App() {
   return (
@@ -45,14 +41,11 @@ function App() {
         <SolutionsSection />
       </section>
 
-      {/* Seção de Consultoria - Foco técnico Protheus */}
-      <ConsultingSection />
-
       {/* Seção de Liderança - Destaque especial */}
       <LeadershipSection />
 
-      {/* Seção de Casos de Sucesso - Prova social com dados */}
-      <SuccessCasesSection />
+      {/* Seção de Consultoria - Foco técnico Protheus */}
+      <ConsultingSection />
 
       {/* Seção de Treinamentos */}
       <TrainingSection />
@@ -61,9 +54,6 @@ function App() {
       <section id="blog">
         <BlogSection />
       </section>
-
-      {/* Seção de Depoimentos - Prova social pessoal */}
-      <TestimonialsSection />
 
       {/* Seção de Contato - CTA final */}
       <section id="contact">
