@@ -21,7 +21,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#003366]/95 backdrop-blur-sm border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <motion.div
@@ -31,10 +31,7 @@ export default function Header() {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            <div className="w-10 h-10 bg-[#FF8C00] rounded-lg flex items-center justify-center font-bold text-white text-xl">
-              SJ
-            </div>
-            <span className="text-white font-bold text-xl">SolutionsJá</span>
+            <span className="text-gray-900 font-bold text-2xl">SolutionsJá</span>
           </motion.div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -45,17 +42,16 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className="text-white hover:text-[#FF8C00] font-semibold transition-colors duration-300 relative group"
+                className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF8C00] group-hover:w-full transition-all duration-300" />
               </motion.button>
             ))}
           </nav>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="md:hidden text-gray-900 p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -69,14 +65,14 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#003366] border-t border-white/10"
+            className="md:hidden bg-white border-t border-gray-100"
           >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-[#FF8C00] font-semibold text-left py-2 px-4 hover:bg-white/10 rounded-lg transition-all duration-300"
+                  className="text-gray-600 hover:text-gray-900 font-medium text-left py-3 px-4 hover:bg-gray-50 rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </button>

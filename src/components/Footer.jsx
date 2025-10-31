@@ -2,69 +2,42 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 
-/**
- * Componente Footer
- * Rodapé da landing page com links, redes sociais e informações da empresa
- */
 export default function Footer() {
-  // Links do footer organizados por categoria
   const footerLinks = {
     Soluções: [
-      { name: 'Protheus ERP', href: '#' },
-      { name: 'Infraestrutura', href: '#' },
-      { name: 'Business Intelligence', href: '#' },
-      { name: 'Processos', href: '#' },
-      { name: 'Liderança', href: '#' },
-    ],
-    Serviços: [
-      { name: 'Consultoria', href: '#' },
-      { name: 'Suporte 24/7', href: '#' },
-      { name: 'Treinamentos', href: '#' },
-      { name: 'Customizações', href: '#' },
-      { name: 'Diagnóstico', href: '#' },
+      { name: 'Consultoria Protheus', href: '#' },
+      { name: 'Academia de Liderança', href: '#' },
     ],
     Recursos: [
       { name: 'Blog', href: '#' },
       { name: 'Casos de Sucesso', href: '#' },
-      { name: 'Documentação', href: '#' },
-      { name: 'Webinars', href: '#' },
-      { name: 'FAQ', href: '#' },
     ],
     Empresa: [
       { name: 'Sobre Nós', href: '#' },
-      { name: 'Equipe', href: '#' },
-      { name: 'Carreiras', href: '#' },
       { name: 'Contato', href: '#' },
-      { name: 'Parceiros', href: '#' },
     ],
   };
 
-  // Redes sociais
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: '#0077B5' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: '#1DA1F2' },
-    { icon: Facebook, href: '#', label: 'Facebook', color: '#1877F2' },
-    { icon: Instagram, href: '#', label: 'Instagram', color: '#E4405F' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
   return (
-    <footer className="bg-[#001a33] text-white pt-16 pb-8">
+    <footer className="bg-gray-50 text-gray-900 pt-20 pb-8 border-t border-gray-100">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-1"
           >
-            <h3 className="text-2xl font-bold text-[#FF8C00] mb-4">SolutionsJá</h3>
-            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-              Protheus. Leadership. Results. Now.
-            </p>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              A consultoria que entrega soluções estratégicas e tecnológicas imediatas
-              para otimizar seu ERP Protheus.
+            <h3 className="text-2xl font-bold mb-4">SolutionsJá</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Consultoria especializada em ERP Protheus e desenvolvimento de líderes de alta performance.
             </p>
           </motion.div>
 
@@ -76,13 +49,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             >
-              <h4 className="text-lg font-bold mb-4">{category}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-bold mb-4">{category}</h4>
+              <ul className="space-y-3">
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-[#FF8C00] transition-colors text-sm"
+                      className="text-gray-600 hover:text-gray-900 transition-colors text-sm"
                     >
                       {link.name}
                     </a>
@@ -98,10 +71,10 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-white/10 pt-8"
+          className="border-t border-gray-200 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               &copy; {new Date().getFullYear()} SolutionsJá. Todos os direitos reservados.
             </p>
 
@@ -109,26 +82,24 @@ export default function Footer() {
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
-                  <motion.a
+                  <a
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    whileHover={{ scale: 1.2, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 group"
+                    className="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition-all duration-300"
                   >
-                    <Icon className="w-5 h-5 text-gray-400 group-hover:text-[#FF8C00] transition-colors" />
-                  </motion.a>
+                    <Icon className="w-5 h-5 text-gray-700" />
+                  </a>
                 );
               })}
             </div>
 
             <div className="flex gap-4 text-sm">
-              <a href="#" className="text-gray-400 hover:text-[#FF8C00] transition-colors">
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Privacidade
               </a>
-              <span className="text-gray-600">|</span>
-              <a href="#" className="text-gray-400 hover:text-[#FF8C00] transition-colors">
+              <span className="text-gray-400">|</span>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Termos de Uso
               </a>
             </div>
