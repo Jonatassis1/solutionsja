@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -21,7 +30,13 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <motion.div
@@ -31,7 +46,13 @@ export default function Header() {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            <span className="text-gray-900 font-bold text-2xl">SolutionsJá</span>
+            <span
+              className={`font-bold text-2xl transition-colors duration-300 ${
+                scrolled ? 'text-gray-900' : 'text-white'
+              }`}
+            >
+              SolutionsJá
+            </span>
           </motion.div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -42,7 +63,11 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300"
+                className={`font-medium transition-colors duration-300 ${
+                  scrolled
+                    ? 'text-gray-600 hover:text-[#4F6FC9]'
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
                 {item.label}
               </motion.button>
@@ -51,7 +76,11 @@ export default function Header() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-gray-900 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              scrolled
+                ? 'text-gray-900 hover:bg-gray-100'
+                : 'text-white hover:bg-white/10'
+            }`}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -72,7 +101,7 @@ export default function Header() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-600 hover:text-gray-900 font-medium text-left py-3 px-4 hover:bg-gray-50 rounded-lg transition-all duration-300"
+                  className="text-gray-600 hover:text-[#4F6FC9] font-medium text-left py-3 px-4 hover:bg-gray-50 rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </button>
