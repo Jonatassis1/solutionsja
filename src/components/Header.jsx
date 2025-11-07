@@ -25,7 +25,7 @@ export default function Header() {
   const menuItems = [
     { label: 'Início', id: 'hero' },
     { label: 'Serviços', id: 'services' },
-    { label: 'Blog', id: 'blog' },
+   // { label: 'Blog', id: 'blog' },
     { label: 'Contato', id: 'contact' },
   ];
 

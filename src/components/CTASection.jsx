@@ -21,7 +21,7 @@ export default function CTASection() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappMessage = `Olá! Vim do site SolutionsJá.
+    const whatsappMessage = `Olá! Bem Vindo site SolutionsJá.
 
 *Nome:* ${formData.name}
 *Email:* ${formData.email}
@@ -29,13 +29,13 @@ export default function CTASection() {
 *Empresa:* ${formData.company || 'Não informada'}
 *Mensagem:* ${formData.message || 'Gostaria de mais informações'}`;
 
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/5549999983886?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleWhatsAppDirect = () => {
     const message = 'Olá! Gostaria de agendar um diagnóstico gratuito para entender como a SolutionsJá pode ajudar minha empresa.';
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5549999983886?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -110,7 +110,7 @@ export default function CTASection() {
                   </div>
                   <div>
                     <p className="text-sm text-white/60">Telefone</p>
-                    <p className="font-medium text-white">+55 (11) 9999-9999</p>
+                    <p className="font-medium text-white">+55 (49) 9 9998-3886</p>
                   </div>
                 </div>
               </div>

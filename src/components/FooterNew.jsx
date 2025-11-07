@@ -24,8 +24,8 @@ export default function FooterNew() {
 
   const contactInfo = [
     { icon: Mail, text: 'contato@solutionsja.com.br' },
-    { icon: Phone, text: '+55 (11) 9999-9999' },
-    { icon: MapPin, text: 'São Paulo, SP' },
+    { icon: Phone, text: '+55 (49) 99998-3886' },
+    { icon: MapPin, text: 'Itajaí, SC' },
   ];
 
   return (
