@@ -75,7 +75,7 @@ export default function HeroSection() {
                 href="#contact"
                 className="inline-flex items-center bg-gradient-to-r from-[#10B981] to-[#06B6D4] hover:shadow-2xl hover:shadow-[#10B981]/50 text-white font-semibold text-lg px-10 py-5 rounded-xl transition-all duration-300 group transform hover:scale-105"
               >
-                Agendar Diagnóstico Gratuito
+                Fale com nosso especialista
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
