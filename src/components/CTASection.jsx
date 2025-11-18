@@ -11,6 +11,9 @@ export default function CTASection() {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,19 +21,53 @@ export default function CTASection() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    const whatsappMessage = `Olá! Bem Vindo site SolutionsJá.
+    try {
+      const response = await fetch('https://begin-n8n.iyoa3i.easypanel.host/webhook-test/db2c3332-abf9-4593-ac66-07e81c9752d2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company || 'Não informada',
+          message: formData.message || 'Gostaria de mais informações',
+          timestamp: new Date().toISOString(),
+          source: 'Website SolutionsJá - Formulário de Contato',
+        }),
+      });
 
-*Nome:* ${formData.name}
-*Email:* ${formData.email}
-*Telefone:* ${formData.phone}
-*Empresa:* ${formData.company || 'Não informada'}
-*Mensagem:* ${formData.message || 'Gostaria de mais informações'}`;
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: '',
+        });
 
-    const whatsappUrl = `https://wa.me/5549999983886?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(whatsappUrl, '_blank');
+        setTimeout(() => {
+          const whatsappMessage = `Olá! Vim do site SolutionsJá.\n\n*Nome:* ${formData.name}\n*Email:* ${formData.email}\n*Telefone:* ${formData.phone}\n*Empresa:* ${formData.company || 'Não informada'}\n*Mensagem:* ${formData.message || 'Gostaria de mais informações'}`;
+          const whatsappUrl = `https://wa.me/5549999983886?text=${encodeURIComponent(whatsappMessage)}`;
+          window.open(whatsappUrl, '_blank');
+        }, 1000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const handleWhatsAppDirect = () => {
@@ -202,12 +239,34 @@ export default function CTASection() {
                 />
               </div>
 
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border-2 border-green-500 text-green-700 px-4 py-3 rounded-xl text-center">
+                  ✓ Mensagem enviada com sucesso! Redirecionando para o WhatsApp...
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border-2 border-red-500 text-red-700 px-4 py-3 rounded-xl text-center">
+                  ✗ Erro ao enviar mensagem. Por favor, tente novamente.
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#4F6FC9] to-[#6366F1] hover:shadow-xl hover:shadow-[#4F6FC9]/30 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 group flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-[#4F6FC9] to-[#6366F1] hover:shadow-xl hover:shadow-[#4F6FC9]/30 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 group flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Solicitar Diagnóstico Gratuito
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    Solicitar Diagnóstico Gratuito
+                    <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  </>
+                )}
               </button>
             </motion.form>
           </div>
