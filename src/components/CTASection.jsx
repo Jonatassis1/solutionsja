@@ -27,7 +27,7 @@ export default function CTASection() {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://begin-n8n.iyoa3i.easypanel.host/webhook-test/db2c3332-abf9-4593-ac66-07e81c9752d2', {
+      const response = await fetch('https://begin-n8n.iyoa3i.easypanel.host/webhook/db2c3332-abf9-4593-ac66-07e81c9752d2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function CTASection() {
         });
 
         setTimeout(() => {
-          const whatsappMessage = `Olá! Vim do site SolutionsJá.\n\n*Nome:* ${formData.name}\n*Email:* ${formData.email}\n*Telefone:* ${formData.phone}\n*Empresa:* ${formData.company || 'Não informada'}\n*Mensagem:* ${formData.message || 'Gostaria de mais informações'}`;
+          const whatsappMessage = `Olá! Bem vindo ao site SolutionsJá.\n\n*Nome:* ${formData.name}\n*Email:* ${formData.email}\n*Telefone:* ${formData.phone}\n*Empresa:* ${formData.company || 'Não informada'}\n*Mensagem:* ${formData.message || 'Gostaria de mais informações'}`;
           const whatsappUrl = `https://wa.me/5549999983886?text=${encodeURIComponent(whatsappMessage)}`;
           window.open(whatsappUrl, '_blank');
         }, 1000);
