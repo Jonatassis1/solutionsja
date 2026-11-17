@@ -1,115 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { whatsappUrl, DEFAULT_WHATSAPP_MESSAGE } from '../config';
+
+const NAV = [
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#quem-somos', label: 'Quem somos' },
+  { href: '#processo', label: 'Processo' },
+  { href: '#sob-medida', label: 'Sob medida' },
+  { href: '#faq', label: 'FAQ' },
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
-  };
-
-  const menuItems = [
-    { label: 'Início', id: 'hero' },
-    { label: 'Serviços', id: 'services' },
-   // { label: 'Blog', id: 'blog' },
-    { label: 'Contato', id: 'contact' },
-  ];
+  const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={() => scrollToSection('hero')}
-          >
-            <span
-              className={`font-bold text-2xl transition-colors duration-300 ${
-                scrolled ? 'text-gray-900' : 'text-white'
-              }`}
-            >
-              SolutionsJá
-            </span>
-          </motion.div>
-
-          <nav className="hidden md:flex items-center gap-8">
-            {menuItems.map((item, index) => (
-              <motion.button
-                key={item.id}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.id)}
-                className={`font-medium transition-colors duration-300 ${
-                  scrolled
-                    ? 'text-gray-600 hover:text-[#4F6FC9]'
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                {item.label}
-              </motion.button>
+    <header className="top">
+      <div className="wrap">
+        <div className="top-row">
+          <a className="logo" href="#inicio" onClick={() => setOpen(false)}>
+            Solutions<span>Já</span>
+          </a>
+          <nav className="nav-links" aria-label="Seções">
+            {NAV.map((item) => (
+              <a key={item.href} href={item.href}>{item.label}</a>
             ))}
           </nav>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled
-                ? 'text-gray-900 hover:bg-gray-100'
-                : 'text-white hover:bg-white/10'
-            }`}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="top-actions">
+            <a
+              className="btn btn-action btn-desktop"
+              href={whatsappUrl(DEFAULT_WHATSAPP_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <button
+              type="button"
+              className="menu-btn"
+              aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={open}
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </div>
-      </div>
-
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-gray-100"
-          >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-gray-600 hover:text-[#4F6FC9] font-medium text-left py-3 px-4 hover:bg-gray-50 rounded-lg transition-all duration-300"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-          </motion.div>
+        {open && (
+          <nav className="mobile-nav" aria-label="Seções">
+            {NAV.map((item) => (
+              <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
+            ))}
+          </nav>
         )}
-      </AnimatePresence>
+      </div>
     </header>
   );
 }

@@ -1,32 +1,36 @@
 import './App.css';
+import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import ModulesStrip from './components/ModulesStrip';
 import ServicesSection from './components/ServicesSection';
+import AboutSection from './components/AboutSection';
 import WhySection from './components/WhySection';
 import ProcessSection from './components/ProcessSection';
+import CustomToolsSection from './components/CustomToolsSection';
+import FAQSection from './components/FAQSection';
 import CTASection from './components/CTASection';
 import FooterNew from './components/FooterNew';
-import React from 'react';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <>
       <Header />
-
-      <section id="hero">
+      <main>
         <HeroSection />
-      </section>
-
-      <ServicesSection />
-
-      <WhySection />
-
-      <ProcessSection />
-
-      <CTASection />
-
+        <ModulesStrip />
+        <ServicesSection />
+        <AboutSection />
+        <WhySection />
+        <ProcessSection />
+        <CustomToolsSection />
+        <FAQSection />
+        <CTASection />
+      </main>
       <FooterNew />
-    </div>
+      <WhatsAppFloat />
+    </>
   );
 }
 
